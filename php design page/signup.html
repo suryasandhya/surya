@@ -1,0 +1,233 @@
+<html>
+<head>
+    <style>
+    body
+        {
+            background-image: url(regback.jpg);
+        }
+         ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color:bisque;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color:black;
+  text-align: center;
+  padding: 17px 19px;
+    
+  text-decoration: none;
+font-size: 20px;
+}
+
+li a:hover {
+  background-color: #111;
+}
+        .wrap
+        {
+           width: 500px;
+            margin: auto;
+            background: #00adee;
+            margin-top: 60px;
+            padding: 5px;
+        }
+        form
+        {
+            padding: 10px;
+            font-family: sans-serif;
+            border: 1px dotted white;
+        }
+        h2
+        {
+            text-align: center;
+            background: orange;
+            color: aliceblue;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        input
+        {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            border: none;
+        }
+        input[type=text],input[type=password],input[type=email],input[type=phone],input[type=button]
+        {
+            width: 60%;
+        }
+        input[type=submit],input[type=button]
+        {
+            width: 30%;
+            background: orange;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            color: white;
+        }
+        input[type=submit],input[type=button]:hover
+        {
+            background:orange;
+        }
+        select
+        {
+            padding: 10px;
+            width: 32%;
+            border-radius: 5px;
+        }
+    
+        .error2{
+                color: red;
+                font-style: italic;
+            }
+            
+    
+    </style>
+    
+    </head>
+<body>
+    <nav>  
+   <ul>
+  <li><a href="homee.html">Home</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="contactpg.html">Contact</a></li>
+  </ul>
+        </nav>
+    <div class="wrap">
+        <form  method="get" novalidate>
+        
+          <h2>Signup Free</h2>
+            <input type="text" id="username" name="username" placeholder="Enter your name min 5 character"  min="5" pattern="[a-zA-z]{5,50}"  required  > <span id="err1" class="error2"> </span>
+            <input type="password" id="password" name="password" placeholder="enter password" required  ><span id="err2" class="error2"> </span>
+            <input type="email" id="mail" name="mail" placeholder="give valid emailid" required ><span id="err3" class="error2"> </span><br>
+            <input type="phone" id="phone" name="phone" placeholder="phone number" pattern="[0-9]{10}"  required  ><span id="err4" class="error2"> </span>
+            <br>
+            <span style="font-size: 18px;">State</span>&nbsp;&nbsp;&nbsp;
+          <select id="state" name="state" onchange="changecat(this.value);" required>
+            <option value="" disabled selected>select state</option><span id="err5" class="error2"> </span>
+                <option value="Andhrapradesh">Andhrapradesh</option>
+                <option value="Assam">Assam</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Tamilnadu">Tamilnadu</option>
+                
+            </select>
+            <span style="font-size: 18px;">City</span>&nbsp;&nbsp;&nbsp;
+            <select  id="city" name="city" required>
+              <option value="" disabled selected>select city</option>
+        </select>
+            
+                
+        <br>
+            <br>
+        <input type="radio" id="gender" name="gender" value="male"   >Male
+        <input type="radio" id="gender" name="gender" value="female" >Female   
+       <br>
+          <input type="checkbox"> I Agree To The Terms Of Use
+            <br>
+             <input type="submit" id="submit" name="submit" value="submit">
+            <input type="button" onclick="location.href='loginn.php';" value="login" >
+        
+        </form>
+         <script> 
+             
+              var stateBycity = {
+  Andhrapradesh : ["Kadapa", "Tirupati", "Nellore", "Kurnool"],
+    Assam: ["Goalpara", "Tinsukia", "Udalguri", "cachar"],
+   Karnataka : ["Bangalore", "Chikmagalur", "Mysore", "Uttara kannada"],
+    Tamilnadu : ["Madurai", "Coimbatore", "Chennai", "Pudukottai"]
+    
+}
+
+    function changecat(value) {
+        if (value.length == 0) document.getElementById("city").innerHTML = "<option></option>";
+        else {
+            var catOptions = "";
+            for (cityId in stateBycity[value]) {
+                catOptions += "<option>" + stateBycity[value][cityId] + "</option>";
+            }
+            document.getElementById("city").innerHTML = catOptions;
+        }
+    }
+            
+       var btns=document.getElementById('submit');
+       function checking()
+       {
+           var checkes=1;
+          
+      var uname=document.getElementById('username');
+    if(uname.checkValidity)
+	{
+	document.getElementById("err1").innerHTML=uname.validationMessage;
+if(uname.validationMessage.toString().length!=0)
+    checkes=0;
+	}
+    if(uname.validity.patternMismatch){
+                  //console.log("wrong");
+               document.getElementById("err1").innerHTML="minimum 5 charcter";
+    }
+     
+     var pass=document.getElementById('password');
+    if(pass.checkValidity)
+	{
+	document.getElementById("err2").innerHTML=pass.validationMessage;
+if(pass.validationMessage.toString().length!=0)
+    checkes=0;
+	}
+    var mail=document.getElementById('mail');
+    if(mail.checkValidity)
+	{
+	document.getElementById("err3").innerHTML=mail.validationMessage;
+ if(mail.validationMessage.toString().length!=0)
+    checkes=0;
+	}
+    if(mail.validity.patternMismatch){
+                  //console.log("wrong");
+               document.getElementById("err3").innerHTML="invalid mailid";
+    }
+         var pno=document.getElementById('phone');
+
+       if(pno.checkValidity)
+	{
+	document.getElementById("err4").innerHTML=pno.validationMessage;
+         if(pno.validationMessage.toString().length!=0)
+                 checkes=0;
+    }
+    if(pno.validity.patternMismatch){
+                  //console.log("wrong");
+               document.getElementById("err4").innerHTML="Invalid Phone Number";
+    }
+    
+	if(checkes==0)
+        {
+            return false;
+        }
+           else{
+               return true;
+           }
+           
+       };
+       btns.onclick=function(e){ 
+           var checkes=checking();   
+                               if(checkes==false) 
+                                  e.preventDefault();
+                               
+                               };
+            
+       </script>
+    
+    
+        
+        
+        </div>
+    </body>
+
+
+
+</html>

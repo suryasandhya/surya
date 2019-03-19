@@ -1,0 +1,90 @@
+
+<html>
+<head>
+    <style>
+    
+           ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 17px 19px;
+  text-decoration: none;
+font-size: 20px;
+}
+
+li a:hover {
+  background-color: #111;
+}
+    
+    </style>
+    
+    </head>
+    <body>
+     <nav>  
+   <ul>
+  <li><a href="homee.html">Home</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="contactpg.html">Contact</a></li>
+  <li><a href="bookt.html">Booking ticket</a></li>
+  <li><a href="payment.html">Payment</a></li>
+  <li><a href="homee.html">logout</a></li>
+       
+  </ul>
+        </nav>
+        <h1 style="font-size: 20px">PAYMENT </h1>
+        <hr>
+        <div style="float: left">
+            <img src="pay1.png" width="200px" height="150px"><img src="pay2.png" width="200px" height="150px"><img src="pay3.png" width="170px" height="140px">
+            <br>
+            <br>
+            <br>
+            <br>
+            <form novalidate >
+                <label ><b>Card no</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" id="cardno" name="cardno" pattern="{0-9}" required id="err1"><br>
+                <br>
+                <label ><b>Card Type</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <select name="card type" required>
+            <option value="">None</option>
+           <option value="chennai">Visa</option>
+           <option value="madurai">Mastercard</option>
+           <option value="bangalore">Rupay</option>
+           </select><br><br>
+            <label ><b>Total Amount : </b></label><br><br>
+            <input type="submit" id="submit" value="submit" onclick="clickAlert()">
+            </form>
+            </div>
+        <div style="float: right">
+                <img src="pay4.jpg" width="350px" height="200px"><br><br>
+                <img src="pay5.jpg" width="350px" height="200px">
+                
+            </div>
+        <script>
+            
+         function clickAlert() {
+    alert("book ticket successfully!");
+}
+        
+        
+        </script>
+       
+       
+    
+    
+    </body>
+
+
+
+</html>

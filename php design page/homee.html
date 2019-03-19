@@ -1,0 +1,389 @@
+<html>
+    <head>
+    <style>
+        
+        
+        *
+        {
+            margin:0;
+            padding:0;
+        }
+        nav{
+            background: url(1stpg.jpg);
+            width: 1300px;
+            height: 500px;
+            background-size: cover;
+            
+        }
+        
+       
+        .main-nav
+        {
+            float: right;
+            margin-top: 10px;
+        }
+        .main-nav li
+        {
+            display: inline-block;
+        }
+        
+        .main-nav li a
+        {
+            color: black;
+            text-decoration: none;
+           padding: 5px 20px;
+            font-family: "Roboto",sans-serif;
+            font-size:18px; 
+          
+        }
+        .main-nav li.active a
+        {
+            border:2px solid black;
+            
+            
+        }
+        .main-nav li a:hover
+        {
+            border: 2px solid black;
+        }
+       
+        body
+        {
+            font-family: monospace;
+        }
+        
+        input[type=text],input[type=password]
+        {
+            width: 90%;
+            padding: 12px 20px;
+            margin:  8px 26px;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        button
+        {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 26px;
+            border: none;
+            cursor: pointer;
+            width: 90%;
+            font-size: 20px;
+            
+        }
+        button:hover
+        {
+            opacity: 0.8;
+            
+        }
+       
+        .imgcontainer
+        {
+            text-align: center;
+            margin: 24px 0 12px 0;
+            position: relative;
+        }
+        .avatar
+        {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+        .modal
+        
+        {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+            
+        }
+        .modal-content
+        {
+            background-color: #fefefe;
+            margin: 4% auto 15% auto;
+            border: 1px solid #888;
+            width: 40%;
+            padding-bottom: 30px;
+        }
+        .close
+        {
+            position: absolute;
+            right: 25px;
+            top: 0;
+            color: #000;
+            font-size: 35px;
+            font-weight: bold;
+        }
+        .close:hover,.close:focus
+        {
+            color: red;
+            cursor: pointer;
+        }
+        .animate
+        {
+            animation: zoom 0.6s
+        }
+        @keyframes zoom
+        {
+            form{ transform: scale(0)}
+            to {transform: scale(1)}
+        }
+        
+       
+        .flip
+        {
+            width:240px;
+            height:150px;
+            float: left;
+            margin: 100px;
+        }
+        h1 .flip
+        {
+            text-align: center;
+        }
+        .flip > .front
+        {
+            position: absolute;
+            -webkit-transform: perspective(600px) rotateY(0deg);
+            transform: perspective(600px) rotateY(0deg);
+             width: 200px;height: 200px;
+            border-radius: 7px;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            transition: -webkit-transform .5s linear 0s;
+            transition: transform .5s linear 0s;
+        }
+        .flip >  .back
+        {
+            position: absolute;
+            -webkit-transform: perspective(400px;) rotateY(180deg);
+            transform: perspective(400px;) rotateY(180deg);
+            width: 200px;
+            height: 200px;
+            border-radius: 7px;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            transition: -webkit- transform .5s linear 0s;
+            transition: transform .5s linear 0s;
+        }
+        .flip:hover > .front
+        {
+           -webkit- transform: perspective(600px) rotateY(-180deg);
+           transform: perspective(600px) rotateY(-180deg);
+            
+        }
+        .flip:hover > .back
+        {
+          -webkit-  transform: perspective(600px) rotateY(0deg);
+           transform: perspective(600px) rotateY(0deg);
+            
+        }
+        
+        .head
+        {
+            text-align: center;
+        }
+        .travels
+        {
+            font-size: 20px;
+        }
+        
+        .travels h2
+        {
+            text-align: center;
+            font-size: 40px;
+            background-color: red;
+            
+        }
+        table 
+        {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th
+        {
+             border: 1px solid #dddddd;
+             text-align: left;
+             padding: 8px;
+         }
+        .box
+            {
+                width: 1330px;
+                height: 400px;
+                margin-left: 10px;
+                margin-top: 20px;
+                margin-bottom: 10px;
+                margin-right: 5px;
+                padding: 10px;
+                box-sizing:content-box;
+                position: absolute;
+                
+            }
+        .aside
+        {
+            float: right;
+            margin-right: 50px;
+            padding: 10px;
+            
+        }
+        .foot
+        {
+            background-color: black;
+            color: aliceblue;
+            padding: 30px;
+            font-size: 15px;
+            font-family: monospace;
+        }
+        
+
+        
+        </style>
+    
+    </head>
+
+
+<body>
+    <div class="wrapper">
+        
+     <nav>
+         <div class="main-nav">
+        <ul>
+<li class="active"><a href="homee.html"><b>HOME</b></a></li> &nbsp;&nbsp;
+            <li><a href="about.html"><b>ABOUT</b></a></li>
+            <li><a href="contactpg.html"><b>CONTACT US</b></a></li> 
+            <li><a href="signup.php"><b>SIGNUP</b></a></li>
+            <li><a href="loginn.php"><b>LOGIN</b></a></li>
+         </ul>
+         </div>
+    </nav>
+    </div>
+    <div class="flip" >
+        <div class="back"><img src="bottel.png" width="200" height="200"></div>
+        <div class="front"><img src="wifi.jpg" width="200" height="200"></div>
+    </div>
+     <div class="flip">
+        <div class="back"><img src="inside.jpg" width="200" height="200"></div>
+        <div class="front"><img src="charger.png" width="200" height="200"></div>
+    </div>
+     <div class="flip">
+        <div class="back"><img src="music.png" width="200" height="200"></div>
+        <div class="front"><img src="movie.jpg" width="200" height="200"></div>
+        </div>
+    <br>
+    <br>
+    
+    <div class="head"><h1>Bus facility</h1> </div>
+    <br>
+    <br>
+    <br>
+  <div class="box" style="float: right;background-color: darkgray">
+    <video width="500" height="240" controls>
+    <source  class="video"src=TicketGoose+Ad+45+Sec+Tamil.mp4 type="video/mp4">
+    <source src="TicketGoose+Ad+45+Sec+Tamil.ogg" type="video/ogg">
+        <h3 style="text-decoration-color: aliceblue">ticket</h3>
+</video>
+        <aside class="aside">
+          <figure><img src="phone.png" width="500px" height="380px"></figure>
+          </aside>  
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="travels">
+        <h2> <b>TOP OPERATORS</b></h2>
+         <table>
+   <tr>
+    <th>TRAVELS</th>
+    <th>ROUTES</th>
+    <th>FIRST BUS</th>
+    <th>LAST BUS</th>
+  </tr>
+ 
+  <tr>
+    <td>SRT travels</td>
+    <td>Madurai to chennai</td>
+    <td>09:55</td>
+    <td>23:55</td>
+  </tr>
+  <tr>
+    <td>Praveen travels</td>
+    <td>Chennai to Bangalore</td>
+    <td>10:30</td>
+    <td>23:00</td>
+  </tr>
+  <tr>
+    <td>Royal travels</td>
+    <td>Chennai to Coimbatore</td>
+    <td>07:10</td>
+    <td>24:00</td>
+  </tr>
+  <tr>
+    <td>Orange travels</td>
+    <td>Bangalore to Madurai</td>
+    <td>11:30</td>
+    <td>22:30</td>
+  </tr>
+  <tr>
+    <td>Infant jesus travels</td>
+    <td>Theni to Chennai</td>
+    <td>5:45</td>
+    <td>22:00</td>
+  </tr>
+  <tr>
+    <td>KPN travels</td>
+    <td>Pudukottai to Chennai</td>
+    <td>8:00</td>
+    <td>23:40</td>
+  </tr>
+</table>
+ </div>
+    <br>
+    <br>
+    <div>
+    <footer class="foot">
+        About &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Payment <br>
+        <br>
+        Fostered from a single seed of IDEA, TicketGoose;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pay online towards your bus ticket bookings <br>  with over a decade of experience in the travel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;by choosing from our plethora of payment modes, <br>industry has grown to become one of India's &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;starting right from credit/debit cards<br> market leaders in the bus transportation sector.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to net banking to Amazon Pay, Paytm or PhonePe.<br><br><img src="facebook.png" width="30px" height="30px"> &nbsp; <img src="twitter.png" width="30px" height="30px"> &nbsp; <img src="mail.jpg" width="30px" height="30px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="visa.png" width="30px" height="30px"> &nbsp;<img src="credit.png" width="30px" height="30px"> &nbsp; <img src="paytm.png" width="30px" height="30px">
+        
+        </footer>
+     </div>
+   </body>
+</html>

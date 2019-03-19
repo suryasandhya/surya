@@ -1,0 +1,309 @@
+<html>
+ <head>
+    <style>
+        
+        .open-button {
+  background-color:red;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  right: 28px;
+  width: 150px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+       
+     body
+        {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-size: cover;
+            background: url(hm2.jpg);
+        }
+         ul 
+        {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 17px 19px;
+  text-decoration: none;
+font-size: 20px;
+}
+
+li a:hover {
+  background-color: #111;
+}
+        
+       
+        .box
+        {
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 400px;
+            padding: 40px;
+            background: rgba(0,0,0,.8);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0,0,0,.5);
+            border-radius: 10px;
+            
+        }
+     .box h1
+        {
+            margin: 0 0 30px;
+            padding: 0;
+            color: #fff;
+            text-align: center;
+        }
+        .box .inputbox
+        {
+            position: relative;
+        }
+        
+        
+        .box .inputbox input
+        {
+            width: 100%;
+            padding: :10px 0;
+            font-size: 20px;
+            color: #fff;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            border: none;
+            border-bottom: 1px solid #fff;
+            outline: none;
+            background: transparent;
+        }
+        
+        
+        .box .inputbox label
+        {
+            position: absolute;
+            top:0;
+            left: 0;
+            padding: 1px 0;
+            font-size:  20px;
+            color: #fff;
+            pointer-events: none;
+            transition: .5s;
+            
+        }
+        
+        .box .inputbox input:focus~label,
+        .box .inputbox input:valid~label 
+        {
+            top: -15px;
+            left: 0;
+            color: #03a9f4;
+            font-size: 16px;
+        }
+        .box input[type="submit"]
+        {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #fff;
+            background: #03a9f4;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        } 
+        
+           .error2{
+                color: red;
+                font-style: italic;
+            }
+     
+     </style>
+    </head>
+<body>
+    
+    <nav>  
+   <ul>
+  <li><a href="homee.html">Home</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="contactpg.html">Contact</a></li>
+  </ul>
+     </nav>
+    
+    <button class="open-button" onclick="openForm()">ADMIN</button>
+
+<div class="form-popup" id="myForm">
+  <form  class="form-container">
+    <h1>Admin login</h1>
+
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter username" name="uname"required >
+
+    <label for="pass"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="pass" required>
+
+    <button type="submit" onclick="check(this.form)" class="btn">Login</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+    <script>
+        function check(form) { /*function to check userid & password*/
+                /*the following code checkes whether the entered userid and password are matching*/
+                if(form.uname.value == "admin" && form.pass.value == "admin1234") {
+                    window.open('adminpg.php')/*opens the target page while Id & password matches*/
+                }
+                else {
+                    alert("Error Password or Username")/*displays error message*/
+                }
+            }
+        
+    </script>
+
+   
+
+
+       
+    <section class="box">
+    
+       <h1>LOGIN</h1>
+        <form  method="get" novalidate>
+             
+            <section class="inputbox">
+                 <input type="text" id="username" name="username" pattern="[a-zA-z]{5,50}" required>
+                 <label>Username &nbsp;&nbsp; <span id="err1" class="error2"> </span> </label>
+            </section>
+            <section class="inputbox">
+                <input type="password" id="password" name="password" required>
+                <label>Password  &nbsp;&nbsp;&nbsp; <span id="err2" class="error2"> </span></label>
+            </section>
+            <input type="submit" id="submit" name="submit" value="submit">
+            </form>
+    </section>
+    
+    
+     
+    <script>
+        
+        function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+            
+       var btns=document.getElementById('submit');
+       function checking()
+       {
+           var checkes=1;
+          
+      var uname=document.getElementById('username');
+    if(uname.checkValidity)
+	{
+	document.getElementById("err1").innerHTML=uname.validationMessage;
+if(uname.validationMessage.toString().length!=0)
+    checkes=0;
+	}
+    if(uname.validity.patternMismatch){
+                  //console.log("wrong");
+               document.getElementById("err1").innerHTML="minimum 5 charcter";
+    }
+     var pass=document.getElementById('password');
+    if(pass.checkValidity)
+	{
+	document.getElementById("err2").innerHTML=pass.validationMessage;
+if(pass.validationMessage.toString().length!=0)
+    checkes=0;
+	}
+           if(checkes==0)
+        {
+            return false;
+        }
+           else{
+               return true;
+           }
+           
+       };
+       btns.onclick=function(e){ 
+           var checkes=checking();   
+                               if(checkes==false) 
+                                  e.preventDefault();
+                               
+                               };
+    
+   
+    </script>
+    
+     
+    
+    
+    
+           
+            
+    </body>
+
+</html>

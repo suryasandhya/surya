@@ -1,0 +1,148 @@
+<html>
+    <head>
+        <style>
+           ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 17px 19px;
+    
+  text-decoration: none;
+font-size: 20px;
+}
+
+li a:hover {
+  background-color: #111;
+}
+            body
+            {
+                background-color:antiquewhite;
+            }
+            .box
+            {
+                
+                position: absolute;
+                top:32%;
+                left:10%;
+                bottom: 5%;
+                transform: translate(-20%,-10%);
+                width: 600px;
+                height: 650px;
+                margin-top: 8px;
+                margin-bottom: 70px;
+                padding: 9px;
+                box-sizing:content-box;
+                border-radius: 5px;
+                background-color:antiquewhite;
+            }
+          .box  input[type="submit"]
+        {
+            background-color:chartreuse;
+            width: 100px;
+            text-decoration-color:white;
+            padding: 6px;
+            font-size: 20px;
+            
+        }
+            .adbox
+            {
+                width: 400px;
+                height: 800px;
+                margin-left: 1px;
+                margin-top: 4px;
+                margin-bottom: 70px;
+                margin-right: 5px;
+                padding: 10px;
+                box-sizing:content-box;
+                
+            }
+          
+      .mySlides 
+            {
+                display:none;
+            }
+            
+         select
+        {
+            padding: 5px;
+            width: 17%;
+            border-radius: 5px;
+        }
+            .error2{
+                color: red;
+                font-style: italic;
+            }
+            
+            
+
+    </style>
+        
+    </head>
+    <body>
+      <nav>  
+   <ul>
+  <li><a href="homee.html">Home</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="contactpg.html">Contact</a></li>
+  <li><a href="bookt.php">Booking ticket</a></li>
+  <li><a href="cancel.php">Cancel bokking</a></li>
+  </ul>
+        </nav>
+        <br>
+        <br>
+        <br>
+         <aside  class="adbox" style="float: right;height: 380;width:700; margin-left: 4px;margin-bottom: 30px; margin-top: 0px">
+           <div>
+                     <img class="mySlides" src="slide11.jpg" style="width:100%;height: 125%">
+                     <img class="mySlides" src="slide2.jpg" style="width:100%;height: 125%">
+                     <img class="mySlides" src="slide3.jpg" style="width:100%;height: 125%" >
+                     <img class="mySlides" src="slide4.jpg" style="width:100%;height: 125%">
+            </div>
+        <script>
+               var myIndex = 0;
+               carousel();
+
+               function carousel() 
+            {
+                   var i;
+                   var x = document.getElementsByClassName("mySlides");
+                   for (i = 0; i < x.length; i++) {
+                   x[i].style.display = "none";  
+            }
+  
+                 myIndex++;
+               if (myIndex > x.length) {myIndex = 1}    
+               x[myIndex-1].style.display = "block";  
+              setTimeout(carousel, 2000); // Change image every 2 seconds
+           }
+            
+    </script>
+         </aside>
+    
+        <form method="get">
+        <label><b>Phone no</b></label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <input type="phone" name="phone"id="phone" required><span id="err6" class="error2"> </span>
+        <br>
+        <br>
+        
+           <input type="submit" name="submit" id="submit" value="submit"> 
+        </form>
+            
+   
+        
+    
+       
+         </body>
+</html>

@@ -1,0 +1,388 @@
+<html>
+    <head>
+        <style>
+           ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 17px 19px;
+    
+  text-decoration: none;
+font-size: 20px;
+}
+
+li a:hover {
+  background-color: #111;
+}
+            body
+            {
+                background-color:antiquewhite;
+            }
+            .box
+            {
+                
+                position: absolute;
+                top:29%;
+                left:10%;
+                bottom: 5%;
+                transform: translate(-20%,-10%);
+                width: 600px;
+                height: 650px;
+                margin-top: 8px;
+                margin-bottom: 70px;
+                padding: 9px;
+                box-sizing:content-box;
+                border-radius: 5px;
+                background-color:antiquewhite;
+            }
+          .box  input[type="submit"]
+        {
+            background-color:chartreuse;
+            width: 100px;
+            text-decoration-color:white;
+            padding: 6px;
+            font-size: 20px;
+            
+        }
+            .adbox
+            {
+                width: 400px;
+                height: 800px;
+                margin-left: 1px;
+                margin-top: 4px;
+                margin-bottom: 70px;
+                margin-right: 5px;
+                padding: 10px;
+                box-sizing:content-box;
+                
+            }
+          
+      .mySlides 
+            {
+                display:none;
+            }
+            
+         select
+        {
+            padding: 5px;
+            width: 17%;
+            border-radius: 5px;
+        }
+            .error2{
+                color: red;
+                font-style: italic;
+            }
+            
+            
+
+    </style>
+        
+    </head>
+    <body>
+      <nav>  
+   <ul>
+  <li><a href="homee.html">Home</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="contactpg.html">Contact</a></li>
+  <li><a href="bookt.html">Booking ticket</a></li>
+  <li><a href="cancel.html">Cancel bokking</a></li>
+  </ul>
+        </nav>
+        <h1 style="font-size: 20px">BOOK YOUR TICKET</h1>
+        <hr>
+    <section class="box" style="float: left;height: 440;width:600; margin-left: 15px;margin-bottom: 30px; margin-top: 0px">
+              
+    <form style="font-size: 20px" action="xx.php"  method="get" novalidate >
+        
+              <label><b>Name</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="name" id="name" pattern="[a-zA-Z]{5,30}" required  ><span id="err1" class="error2"> </span><br>
+        <br>
+        <label><b>Phone no</b></label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <input type="phone" name="phone"id="phone"  pattern="[0-9]{10}"required  ><span id="err7" class="error2"> </span>
+        <br>
+        <br>
+          
+             <label ><b>From City</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <select id="fcity" name="fcity" onchange="changecat(this.value);" required>
+            <option value="" disabled selected>select city</option>
+           <option value="Chennai">Chennai</option>
+           <option value="Madurai">Madurai</option>
+           <option value="Bangalore">Bangalore</option>
+           <option value="Theni">Theni</option>
+           <option value="Pudukottai">Pudukottai</option>
+        </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label><b>TOCity</b></label>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <select  id="tcity" name="tcity" required>
+              <option value="" disabled selected>select city</option>
+        </select>
+       
+              <br>
+              <br>
+        <label><b>Date</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="date" name="date" id="date" min="2019-03-19" max="2019-06-19"  required><span id="err3" class="error2"> </span>
+        <br>
+        <br>
+        <label><b>Travels</b></label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <select  id="travels" name="travels" required>
+              <option value="none" selected="selected">select travels</option>
+             <option value="20456723">SRT</option>
+             <option value="65768568">Praveen</option>
+            <option value="12568945">Royal</option>
+             <option value="48703675">Orange </option>
+             <option value="82496724">Infant jesus</option>
+             <option value="57948265">KPN </option>
+              </select>
+             <br>
+        <br>
+        <td><label><b>BusNo</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label name="busno" id="mylabel"></label></td>
+        
+             <br>
+             <br>
+        <label><b>Class </b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+            <select  id="class1" name="class" onchange="optionChanged()" required>
+                <option value="none" selected="selected">select type</option>
+              <option value="acwithsleeper">AC with Sleeper - 500</option>
+              <option value="acwithnonsleeper">AC with NonSleeper - 300</option>
+              <option value="nonacwithsleeper">NonAC with Sleeper - 400</option>
+              <option value="nonacwithnonsleeper">NonAC with NonSleeper - 200</option>
+             </select>
+        <br>
+        <td><label style="display:none"><b>Cost</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="display:none" name="cost" id="cost" ></label></td><br>
+       <label><b>Passenger</b></label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <input type="number" min="0" max="20" oninput="calculate();" name="pass"id="pass"oninput="calculate();"  pattern="[0-9]{0,30}" required   ><span id="err6" class="error2"> </span>
+        <br>
+        <br>
+        <label><b>Total amount</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="result" name="result" readonly > 
+        
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           <input type="submit" name="submit" id="submit" style="display:none" value="submit"> 
+        </form>
+        
+        <button id="cal" name="calculate" onclick="cal()">SUBMIT</button>
+        </section>
+            
+    <aside  class="adbox" style="float: right;height: 380;width:700; margin-left: 4px;margin-bottom: 30px; margin-top: 0px">
+           <div>
+                     <img class="mySlides" src="slide11.jpg" style="width:100%;height: 125%">
+                     <img class="mySlides" src="slide2.jpg" style="width:100%;height: 125%">
+                     <img class="mySlides" src="slide3.jpg" style="width:100%;height: 125%" >
+                     <img class="mySlides" src="slide4.jpg" style="width:100%;height: 125%">
+            </div>
+        
+        <script>
+            
+               var myIndex = 0;
+               carousel();
+
+               function carousel() 
+            {
+                   var i;
+                   var x = document.getElementsByClassName("mySlides");
+                   for (i = 0; i < x.length; i++) {
+                   x[i].style.display = "none";  
+            }
+  
+                 myIndex++;
+               if (myIndex > x.length) {myIndex = 1}    
+               x[myIndex-1].style.display = "block";  
+              setTimeout(carousel, 2000); // Change image every 2 seconds
+           }
+            
+            
+             
+            var fcityBytcity = {
+    Chennai: ["Madurai", "Bangalore", "Theni", "Pudukottai"],
+    Madurai: ["Chennai", "Bangalore", "Theni", "Pudukottai"],
+    Bangalore: ["Madurai", "Chennai", "Theni", "Pudukottai"],
+    Theni : ["Madurai", "Bangalore", "Chennai", "Pudukottai"],
+    Pudukottai: ["Madurai", "Bangalore", "Theni", "Chennai"]
+}
+
+    function changecat(value) {
+        if (value.length == 0) document.getElementById("tcity").innerHTML = "<option></option>";
+        else {
+            var catOptions = "";
+            for (tcityId in fcityBytcity[value]) {
+                catOptions += "<option>" + fcityBytcity[value][tcityId] + "</option>";
+            }
+            document.getElementById("tcity").innerHTML = catOptions;
+        }
+    }
+            
+            
+    var btns=document.getElementById('submit');
+             btns.onclick=function(e){ 
+           var c=checking();   
+                               if(c==false) 
+                                   {  
+                                       e.preventDefault();
+                                   }
+                               
+                               };
+     
+            
+       function checking()
+       {
+           var checkes=1;
+           
+           var uname=document.getElementById('name');
+    if(uname.checkValidity)
+	{
+	document.getElementById("err1").innerHTML=uname.validationMessage;
+if(uname.validationMessage.toString().length!=0)
+    checkes=0;
+	}
+    if(uname.validity.patternMismatch){
+                  //console.log("wrong");
+               document.getElementById("err1").innerHTML="minimum 5 charcter";
+                checkes=0;
+    }
+          
+            var pno=document.getElementById('phone');
+
+       if(pno.checkValidity)
+	{
+	document.getElementById("err7").innerHTML=pno.validationMessage;
+         if(pno.validationMessage.toString().length!=0)
+                 checkes=0;
+    }
+    if(pno.validity.patternMismatch){
+                  //console.log("wrong");
+               document.getElementById("err7").innerHTML="Invalid Phone Number";
+                checkes=0;
+    }
+    
+            var pass=document.getElementById('pass');
+
+       if(pass.checkValidity)
+	{
+	document.getElementById("err6").innerHTML=pass.validationMessage;
+         if(pno.validationMessage.toString().length!=0)
+                 checkes=0;
+    }
+    if(pass.validity.patternMismatch){
+                  //console.log("wrong");
+               document.getElementById("err6").innerHTML="Enter in numbers";
+            checkes=0;
+    }
+    var date=document.getElementById('date');
+    if(date.checkValidity)
+	{
+	document.getElementById("err3").innerHTML=date.validationMessage;
+ if(date.validationMessage.toString().length!=0)
+    checkes=0;
+	}
+    if(date.validity.patternMismatch){
+                  //console.log("wrong");
+               document.getElementById("err3").innerHTML=" Please Select a date";
+                checkes=0;
+    }
+	if(checkes==0)
+        {
+            return false;
+        }
+           else{
+               return true;
+           }
+           
+       };   
+       </script>
+            
+         </aside>
+        
+        <script>
+            function optionChanged()
+            {
+                 
+                var xx = document.getElementById('class1').value;
+                if(xx=="acwithsleeper")
+                    {
+                        document.getElementById('cost').value=500;
+                       
+                    }
+                
+                 else if(xx=="acwithnonsleeper")
+                    {
+                        document.getElementById('cost').value=300;
+                    }
+                 else if(xx=="nonacwithsleeper")
+                    {
+                        document.getElementById('cost').value=400;
+                    }
+                 else if(xx=="nonacwithnonsleeper")
+                    {
+                        document.getElementById('cost').value=200;
+                    }
+                else{
+                     document.getElementById('cost').value=0;
+                }
+            }
+        function cal()
+        {
+            var type=document.getElementById('class1').value;
+            var amt=  document.getElementById('cost').value;
+            
+            var person=parseInt(document.getElementById('pass').value);
+            var tot=amt*person;
+            if(tot)
+            {
+                document.getElementById('result').value=tot;
+                document.getElementById('submit').style.display="block";
+            }
+            else{
+                alert("Field Empty");
+                document.getElementById('submit').style.display="none";
+            }
+        }
+           
+
+
+function createValidator(element) {
+    return function() {
+        var min = parseInt(element.getAttribute("min")) || 0;
+        var max = parseInt(element.getAttribute("max")) || 0;
+
+        var value = parseInt(element.value) || min;
+        element.value = value; // make sure we got an int
+
+        if (value < min) element.value = min;
+        if (value > max) element.value = max;
+    }
+}
+
+var elm = document.body.querySelector("input[type=number]");
+elm.onkeyup = createValidator(elm);
+            
+            
+            
+</script>
+        <script>
+            
+            
+            window.onload = function()
+{
+
+document.getElementsByName('travels')[0].onchange = function(e)
+{
+    document.getElementById('mylabel').innerHTML = this.value;
+};
+    
+}
+    </script>
+        
+    
+        
+       
+         </body>
+</html>
